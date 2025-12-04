@@ -11,5 +11,11 @@
       "src": "/(.*)",
       "dest": "/public/index.php"
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "APP_ENV": "production"
+    }
+  },
+  "buildCommand": "curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev --prefer-dist --optimize-autoloader --no-interaction"
 }
