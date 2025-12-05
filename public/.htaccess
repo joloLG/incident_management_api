@@ -9,6 +9,13 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
+<<<<<<< HEAD
+=======
+    # Handle X-XSRF-Token Header
+    RewriteCond %{HTTP:x-xsrf-token} .
+    RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
+
+>>>>>>> fab252cd18bcfceab780219b2d8d8f7fbae6f7b4
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
@@ -18,4 +25,8 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+<<<<<<< HEAD
 </IfModule>
+=======
+</IfModule>
+>>>>>>> fab252cd18bcfceab780219b2d8d8f7fbae6f7b4
