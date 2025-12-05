@@ -3,19 +3,26 @@
   "builds": [
     {
       "src": "public/index.php",
-      "use": "@vercel/php"
+      "use": "@vercel/php@0.7.0",
+      "config": {
+        "maxDuration": 30
+      }
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/public/index.php"
-    }
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/public/index.php" }
   ],
+  "env": {
+    "APP_ENV": "production",
+    "APP_DEBUG": "false",
+    "APP_URL": "incident-management-api.vercel.app",
+    "APP_KEY": "base64:zs3TfT/j7kzcc27NpyWqJ/juGMMOjT7kdB23j2yL3uE="
+  },
   "build": {
     "env": {
       "APP_ENV": "production"
     }
   },
-  "buildCommand": "curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev --prefer-dist --optimize-autoloader --no-interaction"
+  "buildCommand": "composer install --no-dev --optimize-autoloader --no-interaction"
 }
