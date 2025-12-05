@@ -16,13 +16,7 @@
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "false",
-    "APP_URL": "incident-management-api.vercel.app",
+    "APP_URL": "https://incident-management-api.vercel.app",
     "APP_KEY": "base64:zs3TfT/j7kzcc27NpyWqJ/juGMMOjT7kdB23j2yL3uE="
-  },
-  "build": {
-    "env": {
-      "APP_ENV": "production"
-    }
-  },
-  "buildCommand": "composer install --no-dev --optimize-autoloader --no-interaction"
+  }
 }
